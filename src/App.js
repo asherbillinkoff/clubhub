@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import AppRouter from "./components/AppRouter";
+import { UserContext } from "./context/user-context";
+import React, { useEffect, useState, useMemo, useContext } from "react";
 
 function App() {
+  const [userId, setUserId] = useState();
+  const value = useMemo(() => ({ userId, setUserId }), [userId]);
+
+  useEffect(() => {
+    if (document.cookie.length === 0) {
+      setUserId(0);
+    }
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.StrictMode>
+      <UserContext.Provider value={value}>
+        <AppRouter></AppRouter>
+      </UserContext.Provider>
+    </React.StrictMode>
   );
 }
 
