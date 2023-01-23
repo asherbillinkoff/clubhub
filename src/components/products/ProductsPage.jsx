@@ -37,10 +37,6 @@ function ProductsPage(props) {
   useEffect(() => {
     const fetchProducts = async () => {
       setLoading(true);
-      console.log(clubFilter);
-      console.log(
-        `http://localhost:3001/products/?maxprice=${maxPrice}&club_type=${clubFilter}&brand=${brandFilter}&hand=${handFilter}`
-      );
       const res = await Axios.get(
         `http://localhost:3001/products/?maxprice=${maxPrice}&club_type=${clubFilter}&brand=${brandFilter}&hand=${handFilter}`,
         {}

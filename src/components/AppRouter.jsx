@@ -2,7 +2,7 @@ import CartPage from "./cart/CartPage";
 import HomePage from "./home/HomePage";
 import ProductDetailsPage from "./products/ProductDetailsPage";
 import ProductsPage from "./products/ProductsPage";
-import ProfilePageMDB from "./profile/ProfilePageMDB";
+import ProfilePage from "./profile/ProfilePage";
 import RegistrationPage from "./register/RegistrationPage";
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -17,7 +17,7 @@ function AppRouter() {
         <Route path="/products/2" element={<ProductsPage page={2} />} />
         <Route path="/products/3" element={<ProductsPage page={3} />} />
         <Route path="/productdetails/:id" element={<ProductDetailsPage />} />
-        <Route path="/profile" element={<ProfilePageMDB />} />
+        <Route path="/profile" element={<ProfilePage />} />
         <Route path="/register" element={<RegistrationPage />} />
       </Routes>
     </BrowserRouter>

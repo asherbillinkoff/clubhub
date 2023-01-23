@@ -9,7 +9,7 @@ import {
 } from "mdb-react-ui-kit";
 import React from "react";
 
-function CartSummaryMDB({ items }) {
+function CartSummary({ items }) {
   function getSubtotal(items) {
     let sum = 0;
     for (const item of items) {
@@ -28,7 +28,7 @@ function CartSummaryMDB({ items }) {
         </MDBTypography>
       </MDBCardHeader>
       <MDBCardBody>
-        <MDBListGroup flush>
+        <MDBListGroup>
           <MDBListGroupItem className="d-flex justify-content-between align-items-center border-0 px-0 pb-0">
             Products
             <span>${subtotal}</span>
@@ -58,4 +58,4 @@ function CartSummaryMDB({ items }) {
   );
 }
 
-export default CartSummaryMDB;
+export default CartSummary;

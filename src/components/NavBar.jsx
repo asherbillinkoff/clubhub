@@ -1,22 +1,29 @@
+import API from "../api/api";
 import profilePic from "../assets/icons/account-profile.svg";
 import contactPic from "../assets/icons/contact.svg";
 import cartPic from "../assets/icons/shopping-cart.svg";
+import { UserContext } from "../context/user-context";
 import LoginModal from "./login/LoginModal";
+import { useContext } from "react";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Navbar from "react-bootstrap/Navbar";
 
 function NavBar() {
+  const { userId } = useContext(UserContext);
+  const api = new API();
+
   return (
     <Navbar variant="dark" bg="dark" expand="lg">
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav>
-          <NavDropdown title="Clubs" id="basic-nav-dropdown" className="ms-4">
-            <NavDropdown.Item href="/products/1">Drivers</NavDropdown.Item>
-            <NavDropdown.Item href="/products/2">Irons</NavDropdown.Item>
-            <NavDropdown.Item href="/products/3">Putters</NavDropdown.Item>
-          </NavDropdown>
+          <Nav.Link
+            className="mx-2 d-flex align-items-center"
+            href="/products/1"
+          >
+            Clubs
+          </Nav.Link>
         </Nav>
         <Nav>
           <Nav.Link className="mx-2 d-flex align-items-center" href="#action2">
@@ -46,7 +53,7 @@ function NavBar() {
               alt="Shopping Cart"
             ></img>
           </Nav.Link>
-          {document.cookie ? (
+          {userId ? (
             <Nav.Link className="mx-2" href="/profile">
               <img
                 src={profilePic}
