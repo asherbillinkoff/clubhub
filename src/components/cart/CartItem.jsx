@@ -42,7 +42,7 @@ function CartItem({ item }) {
             rippleColor="light"
             className="bg-image rounded hover-zoom hover-overlay"
           >
-            <img src={item.image} className="w-100" />
+            <img src={item.image} className="w-100" alt="club preview" />
             <a href="#!">
               <div
                 className="mask"

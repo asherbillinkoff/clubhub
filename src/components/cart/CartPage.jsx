@@ -9,12 +9,12 @@ function CartPage() {
   const [cartItems, setCartItems] = useState([]);
   const [cartLoading, setCartLoading] = useState(true);
   const { userId } = useContext(UserContext);
-  const api = new API();
   console.log(userId);
   const context = useContext(UserContext);
   console.log(context);
 
   useEffect(() => {
+    const api = new API();
     console.log("preCartFetch", userId);
     const fetchCart = async () => {
       setCartLoading(true);

@@ -16,7 +16,7 @@ function LoginModal() {
   const [emailLogin, setEmailLogin] = useState("");
   const [passwordLogin, setPasswordLogin] = useState("");
   const [loginMessage, setLoginMessage] = useState("");
-  const { userId, setUserId } = useContext(UserContext);
+  const { setUserId } = useContext(UserContext);
   const navigate = useNavigate();
 
   Axios.defaults.withCredentials = true;

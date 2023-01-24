@@ -1,7 +1,6 @@
 import API from "../../api/api";
 import { UserContext } from "../../context/user-context";
 import NavBar from "../NavBar";
-import Axios from "axios";
 import {
   MDBCol,
   MDBContainer,
@@ -11,8 +10,6 @@ import {
   MDBCardBody,
   MDBCardImage,
   MDBBtn,
-  MDBBreadcrumb,
-  MDBBreadcrumbItem,
   MDBProgress,
   MDBProgressBar,
   MDBInput,
@@ -27,9 +24,9 @@ function ProfilePageMDB() {
   const [edit, setEdit] = useState(false);
   const { setUserId } = useContext(UserContext);
   const navigate = useNavigate();
-  const api = new API();
 
   function logout() {
+    const api = new API();
     api.logout();
     setUserId(0);
     navigate("/");
@@ -44,6 +41,7 @@ function ProfilePageMDB() {
   }
 
   useEffect(() => {
+    const api = new API();
     api.getUserProfile().then((response) => {
       if (response.data.loggedIn !== 0) {
         console.log(response);
@@ -57,20 +55,6 @@ function ProfilePageMDB() {
       <NavBar></NavBar>
       <section style={{ backgroundColor: "#eee" }}>
         <MDBContainer className="py-5">
-          <MDBRow>
-            <MDBCol>
-              <MDBBreadcrumb className="bg-light rounded-3 p-3 mb-4">
-                <MDBBreadcrumbItem>
-                  <a href="#">Home</a>
-                </MDBBreadcrumbItem>
-                <MDBBreadcrumbItem>
-                  <a href="#">User</a>
-                </MDBBreadcrumbItem>
-                <MDBBreadcrumbItem active>User Profile</MDBBreadcrumbItem>
-              </MDBBreadcrumb>
-            </MDBCol>
-          </MDBRow>
-
           <MDBRow>
             <MDBCol lg="4">
               <MDBCard className="mb-4">

@@ -7,8 +7,6 @@ import {
   MDBCardImage,
   MDBCol,
   MDBContainer,
-  MDBListGroup,
-  MDBListGroupItem,
   MDBRow,
   MDBTypography,
 } from "mdb-react-ui-kit";

@@ -1,10 +1,7 @@
 import { Container } from "react-bootstrap";
 import Carousel from "react-bootstrap/Carousel";
-import { useNavigate } from "react-router";
 
 function MainSlider() {
-  const navigate = useNavigate();
-
   return (
     <Container fluid>
       <Carousel
