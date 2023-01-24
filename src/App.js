@@ -2,7 +2,7 @@ import "./App.css";
 import API from "./api/api";
 import AppRouter from "./components/AppRouter";
 import { UserContext } from "./context/user-context";
-import React, { useEffect, useState, useMemo, useContext } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 
 function App() {
   const [userId, setUserId] = useState();

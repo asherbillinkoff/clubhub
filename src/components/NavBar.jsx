@@ -1,4 +1,3 @@
-import API from "../api/api";
 import profilePic from "../assets/icons/account-profile.svg";
 import contactPic from "../assets/icons/contact.svg";
 import cartPic from "../assets/icons/shopping-cart.svg";
@@ -6,12 +5,10 @@ import { UserContext } from "../context/user-context";
 import LoginModal from "./login/LoginModal";
 import { useContext } from "react";
 import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import Navbar from "react-bootstrap/Navbar";
 
 function NavBar() {
   const { userId } = useContext(UserContext);
-  const api = new API();
 
   return (
     <Navbar variant="dark" bg="dark" expand="lg">

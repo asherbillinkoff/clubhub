@@ -5,7 +5,7 @@ import { Row } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import Form from "react-bootstrap/form";
+import Form from "react-bootstrap/Form";
 import { useNavigate } from "react-router";
 
 function RegistrationForm() {
