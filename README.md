@@ -1,1 +1,0 @@
-For our final project in the course we created an e-commerce platform to incorporate React, NodeJS and SQL into one cohesive website. My website is called the "Clubhub" which is an e-commerce platform for selling golf clubs. The website can handle user registration, user login, shopping carts, wishlists and user profile viewing/modification.
