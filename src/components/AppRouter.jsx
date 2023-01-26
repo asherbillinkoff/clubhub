@@ -12,10 +12,20 @@ function AppRouter() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/balls/1" element={<ProductsPage page={1} club={"B"} />} />
         <Route path="/cart" element={<CartPage />} />
-        <Route path="/products/1" element={<ProductsPage page={1} />} />
-        <Route path="/products/2" element={<ProductsPage page={2} />} />
-        <Route path="/products/3" element={<ProductsPage page={3} />} />
+        <Route
+          path="/products/1"
+          element={<ProductsPage page={1} club={""} />}
+        />
+        <Route
+          path="/products/2"
+          element={<ProductsPage page={2} club={""} />}
+        />
+        <Route
+          path="/products/3"
+          element={<ProductsPage page={3} club={""} />}
+        />
         <Route path="/productdetails/:id" element={<ProductDetailsPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/register" element={<RegistrationPage />} />

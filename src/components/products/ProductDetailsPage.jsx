@@ -7,21 +7,20 @@ import { useContext } from "react";
 import { Container } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
-import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
 
 function ProductDetailsPage(props) {
+  const api = new API();
   const [productDetails, setProductDetails] = useState([]);
-  const navigate = useNavigate();
   const { userId } = useContext(UserContext);
   const productId = getProductId();
-  const api = new API();
 
   function getProductId() {
-    console.log("product details page");
+    console.log("getProductId() executed");
     let url = window.location.href;
-    const re = new RegExp("http://localhost:3000/productdetails/");
-    let productId = url.replace(re, "");
+    let baseUrl = api.url + "/productdetails/";
+    let diff = baseUrl.length - url.length;
+    let productId = url.slice(diff);
     return productId;
   }
 

@@ -1,8 +1,8 @@
+import API from "../../api/api";
 import NavBar from "../NavBar";
 import Pagination from "../Pagination";
 import ProductFilterAccordion from "./ProductFilterAccordion";
 import Products from "./Products";
-import Axios from "axios";
 import React from "react";
 import { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
@@ -13,9 +13,10 @@ function ProductsPage(props) {
   const [currentPage, setCurrentPage] = useState(props.page);
   const [productsPerPage] = useState(8);
   const [maxPrice, setMaxPrice] = useState(1000);
-  const [clubFilter, setClubFilter] = useState("");
+  const [clubFilter, setClubFilter] = useState(props.club);
   const [brandFilter, setBrandFilter] = useState("");
   const [handFilter, setHandFilter] = useState("");
+  const api = new API();
 
   function handlePriceChange(newPrice) {
     setMaxPrice(newPrice);
@@ -37,9 +38,12 @@ function ProductsPage(props) {
   useEffect(() => {
     const fetchProducts = async () => {
       setLoading(true);
-      const res = await Axios.get(
-        `http://localhost:3001/products/?maxprice=${maxPrice}&club_type=${clubFilter}&brand=${brandFilter}&hand=${handFilter}`,
-        {}
+      console.log(maxPrice, clubFilter, brandFilter, handFilter);
+      const res = await api.getProducts(
+        maxPrice,
+        clubFilter,
+        brandFilter,
+        handFilter
       );
       console.log(res.data);
       setProducts(res.data);

@@ -16,23 +16,18 @@ function NavBar() {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav>
           <Nav.Link
-            className="mx-2 d-flex align-items-center"
+            className="ms-4 mx-2 d-flex align-items-center"
             href="/products/1"
           >
             Clubs
           </Nav.Link>
         </Nav>
         <Nav>
-          <Nav.Link className="mx-2 d-flex align-items-center" href="#action2">
+          <Nav.Link className="mx-2 d-flex align-items-center" href="/balls/1">
             Balls
           </Nav.Link>
         </Nav>
-        <Nav>
-          <Nav.Link className="mx-2 d-flex align-items-center" href="#action2">
-            Gear
-          </Nav.Link>
-        </Nav>
-        <Navbar.Brand href="/" style={{ marginLeft: "32%", fontStyle: "bold" }}>
+        <Navbar.Brand href="/" style={{ marginLeft: "36%", fontStyle: "bold" }}>
           ClubHub
         </Navbar.Brand>
         <Nav className="justify-content-end flex-grow-1 pe-3">

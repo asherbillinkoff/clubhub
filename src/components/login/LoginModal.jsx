@@ -1,5 +1,5 @@
+import API from "../../api/api";
 import { UserContext } from "../../context/user-context";
-import Axios from "axios";
 import React, { useState } from "react";
 import { useContext } from "react";
 import { Image } from "react-bootstrap";
@@ -18,14 +18,12 @@ function LoginModal() {
   const [loginMessage, setLoginMessage] = useState("");
   const { setUserId } = useContext(UserContext);
   const navigate = useNavigate();
+  const api = new API();
 
-  Axios.defaults.withCredentials = true;
+  // Axios.defaults.withCredentials = true;
 
   const preLogin = () => {
-    return Axios.post("http://localhost:3001/login", {
-      email: emailLogin,
-      password: passwordLogin,
-    });
+    return api.login(emailLogin, passwordLogin);
   };
 
   function login() {

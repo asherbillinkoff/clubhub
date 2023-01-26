@@ -12,19 +12,20 @@ import React from "react";
 
 function CartItem({ item }) {
   const api = new API();
-  const [quantity, setQuantity] = useState(item.qty);
+  const [quantity, setQuantity] = useState(0);
   console.log(quantity);
 
   function handleAddToCart(item_id) {
+    let newQty = item.qty + 1;
+    setQuantity(newQty);
     api.updateCart(item_id);
     console.log("Add cart fired in item component", item_id);
-    setQuantity(item.qty);
   }
 
   function handleRemoveItem(item_id) {
     api.removeItem(item_id);
     console.log("Remove from cart fired in item component", item_id);
-    setQuantity(item.qty);
+    setQuantity(item.qty - 1);
   }
 
   function handleRemoveProduct(item_id) {

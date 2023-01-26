@@ -1,4 +1,4 @@
-import Axios from "axios";
+import API from "../../api/api";
 import { useState } from "react";
 import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
@@ -9,8 +9,6 @@ import Form from "react-bootstrap/Form";
 import { useNavigate } from "react-router";
 
 function RegistrationForm() {
-  const navigate = useNavigate();
-
   const [firstNameReg, setFirstNameReg] = useState("");
   const [lastNameReg, setLastNameReg] = useState("");
   const [emailReg, setEmailReg] = useState("");
@@ -19,21 +17,22 @@ function RegistrationForm() {
   const [addressReg, setAddressReg] = useState("");
   const [cityReg, setCityReg] = useState("");
   const [countryReg, setCountryReg] = useState("");
+  const api = new API();
+  const navigate = useNavigate();
 
   const register = () => {
-    Axios.post("http://localhost:3001/register", {
+    const user = {
       firstName: firstNameReg,
       lastName: lastNameReg,
       email: emailReg,
       password: passwordReg,
-      gender: genderReg,
+      is_male: genderReg,
       address: addressReg,
       city: cityReg,
       country: countryReg,
-    }).then((response) => {
-      console.log(response);
-      navigate("/");
-    });
+    };
+    api.registerUser(user);
+    navigate("/");
   };
 
   return (
