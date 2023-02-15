@@ -21,11 +21,3 @@ Why did I use this specific stack?
 Features for next version:
 - Admin screen for sellers to upload new products online and manage their store.
 - Product reviews and ratings for customers to relay product feedback.
-
-<p align="center">
-<img width="300" alt="maze-visual" src="https://user-images.githubusercontent.com/109813330/217209671-804cf7eb-4f2d-435f-be20-0a3b26a2a114.png">
-</p>
-<p align="center"><strong>Figure 1: 3D Dollhouse view of Maze</strong></p>
-
-
-
