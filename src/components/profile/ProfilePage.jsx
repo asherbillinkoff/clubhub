@@ -19,9 +19,10 @@ import { useState, useEffect } from "react";
 import { useContext } from "react";
 import { useNavigate } from "react-router";
 
-function ProfilePageMDB() {
+function ProfilePage({ items }) {
   const [user, setUser] = useState([]);
   const [edit, setEdit] = useState(false);
+  const [wishlist, setWishlist] = useState([]);
   const { setUserId } = useContext(UserContext);
   const navigate = useNavigate();
 
@@ -42,12 +43,17 @@ function ProfilePageMDB() {
 
   useEffect(() => {
     const api = new API();
-    api.getUserProfile().then((response) => {
-      if (response.data.loggedIn !== 0) {
-        console.log(response);
-        setUser(response.data[0]);
-      }
-    });
+    api
+      .getUserProfile()
+      .then((response) => {
+        if (response.data.loggedIn !== 0) {
+          console.log(response);
+          setUser(response.data[0]);
+        }
+      })
+      .then(() => {
+        api.get;
+      });
   }, []);
 
   return (
@@ -191,78 +197,9 @@ function ProfilePageMDB() {
                     <MDBCardBody>
                       <MDBCardText className="mb-4">
                         <span className="text-primary font-italic me-1">
-                          Recently Viewed
+                          Wishlist
                         </span>
                       </MDBCardText>
-                      <MDBCardText
-                        className="mb-1"
-                        style={{ fontSize: ".77rem" }}
-                      >
-                        Web Design
-                      </MDBCardText>
-                      <MDBProgress className="rounded">
-                        <MDBProgressBar
-                          width={80}
-                          valuemin={0}
-                          valuemax={100}
-                        />
-                      </MDBProgress>
-
-                      <MDBCardText
-                        className="mt-4 mb-1"
-                        style={{ fontSize: ".77rem" }}
-                      >
-                        Website Markup
-                      </MDBCardText>
-                      <MDBProgress className="rounded">
-                        <MDBProgressBar
-                          width={72}
-                          valuemin={0}
-                          valuemax={100}
-                        />
-                      </MDBProgress>
-
-                      <MDBCardText
-                        className="mt-4 mb-1"
-                        style={{ fontSize: ".77rem" }}
-                      >
-                        One Page
-                      </MDBCardText>
-                      <MDBProgress className="rounded">
-                        <MDBProgressBar
-                          width={89}
-                          valuemin={0}
-                          valuemax={100}
-                        />
-                      </MDBProgress>
-
-                      <MDBCardText
-                        className="mt-4 mb-1"
-                        style={{ fontSize: ".77rem" }}
-                      >
-                        Mobile Template
-                      </MDBCardText>
-                      <MDBProgress className="rounded">
-                        <MDBProgressBar
-                          width={55}
-                          valuemin={0}
-                          valuemax={100}
-                        />
-                      </MDBProgress>
-
-                      <MDBCardText
-                        className="mt-4 mb-1"
-                        style={{ fontSize: ".77rem" }}
-                      >
-                        Backend API
-                      </MDBCardText>
-                      <MDBProgress className="rounded">
-                        <MDBProgressBar
-                          width={66}
-                          valuemin={0}
-                          valuemax={100}
-                        />
-                      </MDBProgress>
                     </MDBCardBody>
                   </MDBCard>
                 </MDBCol>
@@ -275,4 +212,4 @@ function ProfilePageMDB() {
   );
 }
 
-export default ProfilePageMDB;
+export default ProfilePage;

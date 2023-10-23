@@ -9,6 +9,7 @@ import Navbar from "react-bootstrap/Navbar";
 
 function NavBar() {
   const { userId } = useContext(UserContext);
+  console.log(userId);
 
   return (
     <Navbar variant="dark" bg="dark" expand="lg">

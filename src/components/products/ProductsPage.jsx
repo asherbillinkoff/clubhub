@@ -11,7 +11,7 @@ function ProductsPage(props) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(props.page);
-  const [productsPerPage] = useState(8);
+  const [productsPerPage] = useState(9);
   const [maxPrice, setMaxPrice] = useState(1000);
   const [clubFilter, setClubFilter] = useState(props.club);
   const [brandFilter, setBrandFilter] = useState("");

@@ -95,4 +95,12 @@ export default class API {
   getCartItems(userId) {
     return Axios.get(`${this.url}/cartitems/${userId}`);
   }
+
+  addToWishlist(productId) {
+    return Axios.get(`${this.url}/addtowishlist/${productId}`);
+  }
+
+  getWishlist(userId) {
+    return Axios.get(`${this.url}/getwishlist/${userId}`);
+  }
 }

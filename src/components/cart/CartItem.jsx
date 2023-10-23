@@ -7,17 +7,17 @@ import {
   MDBRipple,
   MDBRow,
 } from "mdb-react-ui-kit";
-import { useState } from "react";
+// import { useState } from "react";
 import React from "react";
 
 function CartItem({ item }) {
   const api = new API();
-  const [quantity, setQuantity] = useState(0);
-  console.log(quantity);
+  // const [quantity, setQuantity] = useState(item.qty);
+  // console.log(quantity);
 
   function handleAddToCart(item_id) {
-    let newQty = item.qty + 1;
-    setQuantity(newQty);
+    // let newQty = item.qty + 1;
+    // setQuantity(newQty);
     api.updateCart(item_id);
     console.log("Add cart fired in item component", item_id);
   }
@@ -25,13 +25,13 @@ function CartItem({ item }) {
   function handleRemoveItem(item_id) {
     api.removeItem(item_id);
     console.log("Remove from cart fired in item component", item_id);
-    setQuantity(item.qty - 1);
+    // setQuantity(item.qty - 1);
   }
 
   function handleRemoveProduct(item_id) {
     api.removeProduct(item_id);
     console.log("Remove product fired in item component", item_id);
-    setQuantity(item.qty);
+    // setQuantity(item.qty);
   }
 
   return (
@@ -80,7 +80,8 @@ function CartItem({ item }) {
             </MDBBtn>
 
             <MDBInput
-              defaultValue={item.qty}
+              //defaultValue={item.qty}
+              value={item.qty}
               min={0}
               type="number"
               label="Quantity"
