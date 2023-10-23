@@ -10,8 +10,6 @@ import {
   MDBCardBody,
   MDBCardImage,
   MDBBtn,
-  MDBProgress,
-  MDBProgressBar,
   MDBInput,
 } from "mdb-react-ui-kit";
 import React from "react";
@@ -22,7 +20,7 @@ import { useNavigate } from "react-router";
 function ProfilePage({ items }) {
   const [user, setUser] = useState([]);
   const [edit, setEdit] = useState(false);
-  const [wishlist, setWishlist] = useState([]);
+  // const [wishlist, setWishlist] = useState([]);
   const { setUserId } = useContext(UserContext);
   const navigate = useNavigate();
 
@@ -43,17 +41,12 @@ function ProfilePage({ items }) {
 
   useEffect(() => {
     const api = new API();
-    api
-      .getUserProfile()
-      .then((response) => {
-        if (response.data.loggedIn !== 0) {
-          console.log(response);
-          setUser(response.data[0]);
-        }
-      })
-      .then(() => {
-        api.get;
-      });
+    api.getUserProfile().then((response) => {
+      if (response.data.loggedIn !== 0) {
+        console.log(response);
+        setUser(response.data[0]);
+      }
+    });
   }, []);
 
   return (

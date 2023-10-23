@@ -16,7 +16,7 @@ function ProductsPage(props) {
   const [clubFilter, setClubFilter] = useState(props.club);
   const [brandFilter, setBrandFilter] = useState("");
   const [handFilter, setHandFilter] = useState("");
-  const api = new API();
+  // const api = new API();
 
   function handlePriceChange(newPrice) {
     setMaxPrice(newPrice);
@@ -36,6 +36,7 @@ function ProductsPage(props) {
   }
 
   useEffect(() => {
+    const api = new API();
     const fetchProducts = async () => {
       setLoading(true);
       console.log(maxPrice, clubFilter, brandFilter, handFilter);
