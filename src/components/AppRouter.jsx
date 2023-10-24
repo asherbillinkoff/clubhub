@@ -26,7 +26,10 @@ function AppRouter() {
           path="/products/3"
           element={<ProductsPage page={3} club={""} />}
         />
-        <Route path="/productdetails/:id" element={<ProductDetailsPage />} />
+        <Route
+          path="/productdetails/:id"
+          element={<ProductDetailsPage path="/productdetails/:id" />}
+        />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/register" element={<RegistrationPage />} />
       </Routes>

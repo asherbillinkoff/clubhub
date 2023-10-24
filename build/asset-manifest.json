@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e829d96a.css",
+    "main.js": "/static/js/main.c1640add.js",
+    "static/js/787.9b9e34e9.chunk.js": "/static/js/787.9b9e34e9.chunk.js",
+    "static/media/golf-course.jpg": "/static/media/golf-course.e12d5df027d0082ae7ee.jpg",
+    "static/media/fa-solid-900.ttf": "/static/media/fa-solid-900.b1a653db79258eeccc5d.ttf",
+    "static/media/titleist-irons.jpeg": "/static/media/titleist-irons.d4149c8cbc062adfbaf1.jpeg",
+    "static/media/fa-brands-400.ttf": "/static/media/fa-brands-400.450a5c898f0b184b968b.ttf",
+    "static/media/fa-solid-900.woff2": "/static/media/fa-solid-900.41c0f706d8ce93933771.woff2",
+    "static/media/ping-driver.jpeg": "/static/media/ping-driver.8c09b903abd355060cd9.jpeg",
+    "static/media/fa-brands-400.woff2": "/static/media/fa-brands-400.3ac6859b28be946745f9.woff2",
+    "static/media/fa-regular-400.ttf": "/static/media/fa-regular-400.3cd9fb8fcec4ad0f99d4.ttf",
+    "static/media/golf-ball-icon.png": "/static/media/golf-ball-icon.c270a336820bf16513ee.png",
+    "static/media/fa-regular-400.woff2": "/static/media/fa-regular-400.1f3772178d9e5bed38a6.woff2",
+    "static/media/fa-v4compatibility.ttf": "/static/media/fa-v4compatibility.e314b618134d5be20996.ttf",
+    "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.4ee7f902d88f819e251c.woff2",
+    "static/media/account-profile.svg": "/static/media/account-profile.c54ccd4e140038b646727d400c011671.svg",
+    "static/media/contact.svg": "/static/media/contact.a2ba6969a1e457d67e3030bb8e1f43f3.svg",
+    "index.html": "/index.html",
+    "static/media/shopping-cart.svg": "/static/media/shopping-cart.ce0533dd92e39aa84ae85877b5abab88.svg",
+    "main.e829d96a.css.map": "/static/css/main.e829d96a.css.map",
+    "main.c1640add.js.map": "/static/js/main.c1640add.js.map",
+    "787.9b9e34e9.chunk.js.map": "/static/js/787.9b9e34e9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e829d96a.css",
+    "static/js/main.c1640add.js"
+  ]
+}
